@@ -6,6 +6,8 @@
  * @flow strict-local
  */
 
+ /*test comment for github and android studio integration*/
+
 import React from 'react';
 import type {Node} from 'react';
 import {
