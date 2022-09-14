@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text,TextInput, View } from 'react-native';
 import {
 GoogleSignin,
 GoogleSigninButton,
@@ -15,6 +15,14 @@ const App = () => {
             alignItems: "center"
             }}>
             <Text>LOTUS PROJECTOR</Text>
+            <TextInput
+                style={{
+                height:40,
+                borderColor: 'red',
+                borderWidth: 1
+                }}
+                defaultValue="Feed me, Seymore"
+            />
         </View>
     )
 }
