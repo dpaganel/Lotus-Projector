@@ -250,7 +250,7 @@ android {
         }
     }
 }
-
+/*
 plugins {
     id 'com.android.application'
 
@@ -258,7 +258,7 @@ plugins {
     id 'com.google.gms.google-services'
 
 }
-
+*/
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
