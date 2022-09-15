@@ -18,15 +18,21 @@ class App extends Component {
     finishHandle = (text) => {
         this.setState({handleFinal:this.state.tweetHandle})
     }
+    /*The first text view is just the current working title. The Text input is where
+    * the user can input the handle, which modifies variable tweetHandle
+    * when the button is pressed, the variable handleFinal takes the current value of
+    * tweetHandle, so we'll input handleFinal into the twitter API search
+    */
     render (){
         return (
         <View style={styles.container}>
-            <Text>LOTUS PROJECTOR</Text>
+            <Text style = {styles.container}>LOTUS PROJECTOR</Text>
             <TextInput
                 style={{
                 height:40,
                 borderColor: 'red',
-                borderWidth: 1
+                borderWidth: 1,
+                color:'red'
                 }}
                 defaultValue="Feed me, Seymore"
                 onChangeText = {this.handleHandle}
@@ -40,14 +46,18 @@ class App extends Component {
         </View>
         )
     }
+    //Comments can't be placed in a render block
 }
 
 export default App;
-
+//This style sheet lets us quickly choose what text looks like.
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor:'black',
+        color:'white',
+        fontWeight:'bold'
     }
 })
