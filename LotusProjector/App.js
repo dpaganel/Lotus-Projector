@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Text, TextInput, StyleSheet, View } from 'react-native';
 import {
 GoogleSignin,
@@ -6,8 +6,15 @@ GoogleSigninButton,
 statusCodes,
 } from 'react-native-google-signin';
 
-const App = () => {
-    return (
+class App extends Component {
+    state = {
+        tweetHandle: ' '
+    }
+    handleHandle = (text) => {
+        this.setState({ tweetHandle: text})
+    }
+    render (){
+        return (
         <View style={styles.container}>
             <Text>LOTUS PROJECTOR</Text>
             <TextInput
@@ -17,10 +24,15 @@ const App = () => {
                 borderWidth: 1
                 }}
                 defaultValue="Feed me, Seymore"
+                onChangeText = {this.handleHandle}
             />
+            <Text>{this.state.tweetHandle}</Text>
         </View>
-    )
+        )
+    }
 }
+
+export default App;
 
 const styles = StyleSheet.create({
     container: {
@@ -28,6 +40,4 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     }
-});
-
-export default App;
+})
