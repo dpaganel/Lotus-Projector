@@ -5,19 +5,25 @@ GoogleSignin,
 GoogleSigninButton,
 statusCodes,
 } from 'react-native-google-signin';
+import { fetchUser } from './UserFetch.js';
+
+var user = {
+    username: ' '
+}
 
 class App extends Component {
     state = {
         tweetHandle: ' ',
         handleFinal: ' '
     }
-    
+
     handleHandle = (text) => {
         this.setState({ tweetHandle: text})
     }
     finishHandle = (text) => {
         this.setState({handleFinal:this.state.tweetHandle})
     }
+
     /*The first text view is just the current working title. The Text input is where
     * the user can input the handle, which modifies variable tweetHandle
     * when the button is pressed, the variable handleFinal takes the current value of
@@ -37,12 +43,15 @@ class App extends Component {
                 defaultValue="Feed me, Seymore"
                 onChangeText = {this.handleHandle}
             />
-            <Text>{this.state.tweetHandle}</Text>
             <Button
-                onPress={this.finishHandle}
                 title="Investigate"
                 color="red"
+                onPress={() => user.username = fetchUser(this.state.tweetHandle).username}
+                
             />
+            <Text style = {styles.container}>username: { user.username } </Text>
+            <Text style = {styles.container}>name:</Text>
+            <Text style = {styles.container}>tweets:</Text>
         </View>
         )
     }
@@ -61,3 +70,4 @@ const styles = StyleSheet.create({
         fontWeight:'bold'
     }
 })
+
