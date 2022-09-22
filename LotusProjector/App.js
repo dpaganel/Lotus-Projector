@@ -7,14 +7,20 @@ statusCodes,
 } from 'react-native-google-signin';
 import { fetchUser } from './UserFetch.js';
 
-var user = {
-    username: ' '
-}
+var fetched_user = {};
+var fetched_username;
+var fetched_name;
+var fetched_tweets;
 
 class App extends Component {
+    // Create states that will eventually be replaced by user input and returned objects from
+    // Twitter API
     state = {
         tweetHandle: ' ',
-        handleFinal: ' '
+        handleFinal: ' ',
+        username: ' ',
+        name: ' ',
+        tweets: ' '
     }
 
     handleHandle = (text) => {
@@ -22,6 +28,18 @@ class App extends Component {
     }
     finishHandle = (text) => {
         this.setState({handleFinal:this.state.tweetHandle})
+    }
+
+    handleClick = async () => {
+        fetched_user = await fetchUser(this.state.tweetHandle)
+        fetched_username = fetched_user.data.username
+        fetched_name = fetched_user.data.name
+        fetched_tweets = fetched_user.data.public_metrics.tweet_count
+        console.log(fetched_username)
+        console.log(fetched_user.data.username)
+        this.setState({username: fetched_username})
+        this.setState({name: fetched_name})
+        this.setState({tweets: fetched_tweets})
     }
 
     /*The first text view is just the current working title. The Text input is where
@@ -40,26 +58,26 @@ class App extends Component {
                 borderWidth: 1,
                 color:'red'
                 }}
-                defaultValue="Feed me, Seymore"
+                defaultValue="Enter twitter handle"
                 onChangeText = {this.handleHandle}
             />
             <Button
-                title="Investigate"
+                title="Check"
                 color="red"
-                onPress={() => user.username = fetchUser(this.state.tweetHandle).username}
-                
+                onPress={this.handleClick}
             />
-            <Text style = {styles.container}>username: { user.username } </Text>
-            <Text style = {styles.container}>name:</Text>
-            <Text style = {styles.container}>tweets:</Text>
+            <Text style = {styles.container}>username: {this.state.username} </Text>
+            <Text style = {styles.container}>name: {this.state.name} </Text>
+            <Text style = {styles.container}>tweet count: {this.state.tweets} tweets</Text>
         </View>
+
         )
     }
-    //Comments can't be placed in a render block
+    // Comments can't be placed in a render block
 }
 
 export default App;
-//This style sheet lets us quickly choose what text looks like.
+// This style sheet lets us quickly choose what text looks like.
 const styles = StyleSheet.create({
     container: {
         flex: 1,
