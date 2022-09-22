@@ -66,8 +66,8 @@ class App extends Component {
                 color="red"
                 onPress={this.handleClick}
             />
-            <Text style = {styles.container}>username: {this.state.username} </Text>
-            <Text style = {styles.container}>name: {this.state.name} </Text>
+            <Text style = {styles.container}>username: {this.state.username}</Text>
+            <Text style = {styles.container}>name: {this.state.name}</Text>
             <Text style = {styles.container}>tweet count: {this.state.tweets} tweets</Text>
         </View>
 
