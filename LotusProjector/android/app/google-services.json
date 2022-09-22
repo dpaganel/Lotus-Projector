@@ -1,41 +1,41 @@
 {
   "project_info": {
-    "project_number": "284710419783",
-    "project_id": "lotus-projector",
-    "storage_bucket": "lotus-projector.appspot.com"
+    "project_number": "283064631131",
+    "project_id": "lotus-projector-app",
+    "storage_bucket": "lotus-projector-app.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:284710419783:android:77f85786921e691bd72062",
+        "mobilesdk_app_id": "1:283064631131:android:894032ef7e2873cd06247e",
         "android_client_info": {
           "package_name": "com.lotusprojector"
         }
       },
       "oauth_client": [
         {
-          "client_id": "284710419783-tod255val9b7leu92oi24o6qehiov017.apps.googleusercontent.com",
+          "client_id": "283064631131-9ag98328k7tk2nm4e3qfrsgtch1t7hj3.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.lotusprojector",
-            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+            "certificate_hash": "517c379288f66e8723c5386888799c8e1dc922f6"
           }
         },
         {
-          "client_id": "284710419783-56bsi72b8cb04ub8kq4orjnr120dqg6f.apps.googleusercontent.com",
+          "client_id": "283064631131-jrq1obuhn753lc2q0oeht5ecpb5l86i5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDWMFya_pVSTPFCmcXwbG2Usft0xtzy7W8"
+          "current_key": "AIzaSyDEQSBE7VR0KL_P-iD8bSgFEAaogOl3IdM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "284710419783-56bsi72b8cb04ub8kq4orjnr120dqg6f.apps.googleusercontent.com",
+              "client_id": "283064631131-jrq1obuhn753lc2q0oeht5ecpb5l86i5.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

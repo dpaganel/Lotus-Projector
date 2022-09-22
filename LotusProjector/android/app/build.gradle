@@ -1,5 +1,8 @@
 apply plugin: "com.android.application"
-apply plugin: 'com.google.gms.google-services'
+//plugins {
+//    id 'com.android.application'
+//    id 'com.google.gms.google-services'
+//}
 
 import com.android.build.OutputFile
 import org.apache.tools.ant.taskdefs.condition.Os
@@ -259,6 +262,7 @@ plugins {
 
 }
 */
+
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
@@ -290,8 +294,7 @@ dependencies {
     }
 
     // Import the Firebase BoM
-    implementation platform('com.google.firebase:firebase-bom:30.2.0')
-
+    implementation platform('com.google.firebase:firebase-bom:30.4.1')
 
     // TODO: Add the dependencies for Firebase products you want to use
     // When using the BoM, don't specify versions in Firebase dependencies
@@ -334,3 +337,5 @@ def isNewArchitectureEnabled() {
     // - Set an environment variable `ORG_GRADLE_PROJECT_newArchEnabled=true`
     return project.hasProperty("newArchEnabled") && project.newArchEnabled == "true"
 }
+
+apply plugin: 'com.google.gms.google-services'

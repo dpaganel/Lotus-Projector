@@ -1,16 +1,33 @@
 import React, { Component } from 'react';
 import { Text, TextInput, StyleSheet, View, Button } from 'react-native';
-import {
-GoogleSignin,
-GoogleSigninButton,
-statusCodes,
-} from 'react-native-google-signin';
 import { fetchUser } from './UserFetch.js';
+import auth from '@react-native-firebase/auth';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 var fetched_user = {};
 var fetched_username;
 var fetched_name;
 var fetched_tweets;
+
+//// Google Authentication
+//GoogleSignin.configure({
+//    webClientId: "283064631131-jrq1obuhn753lc2q0oeht5ecpb5l86i5.apps.googleusercontent.com",
+//});
+
+//const signInWithGoogle = async () => {
+//    // Get user's ID token
+//    const {idToken} = await GoogleSignin.signIn();
+//    // Create Google credential with token
+//    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+//    // Sign in with the Google credential
+//    const user_sign_in = auth().signInWithCredential(googleCredential);
+//    user_sign_in.then((user) => {
+//        console.log(user);
+//    })
+//    .catch((error) => {
+//        console.log(error);
+//    })
+//}
 
 class App extends Component {
     // Create states that will eventually be replaced by user input and returned objects from
@@ -76,6 +93,11 @@ class App extends Component {
         )
     }
     // Comments can't be placed in a render block
+    // The below commented Button element used to be in the render block for Google Authentication
+    //            <Button
+    //                title="Sign in with Google"
+    //                onPress={signInWithGoogle}
+    //            />
 }
 
 export default App;
