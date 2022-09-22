@@ -35,8 +35,6 @@ class App extends Component {
         fetched_username = fetched_user.data.username
         fetched_name = fetched_user.data.name
         fetched_tweets = fetched_user.data.public_metrics.tweet_count
-        console.log(fetched_username)
-        console.log(fetched_user.data.username)
         this.setState({username: fetched_username})
         this.setState({name: fetched_name})
         this.setState({tweets: fetched_tweets})
@@ -58,17 +56,21 @@ class App extends Component {
                 borderWidth: 1,
                 color:'red'
                 }}
-                defaultValue="Enter twitter handle"
+                defaultValue=""
                 onChangeText = {this.handleHandle}
             />
             <Button
-                title="Check"
+                title="Check Account"
                 color="red"
+
                 onPress={this.handleClick}
             />
-            <Text style = {styles.container}>username: {this.state.username}</Text>
-            <Text style = {styles.container}>name: {this.state.name}</Text>
-            <Text style = {styles.container}>tweet count: {this.state.tweets} tweets</Text>
+            <Text style = {styles.container}>username:</Text>
+            <Text style = {result_styles.container}>{this.state.username}</Text>
+            <Text style = {styles.container}>name:</Text>
+            <Text style = {result_styles.container}>{this.state.name}</Text>
+            <Text style = {styles.container}>tweet count:</Text>
+            <Text style = {result_styles.container}>{this.state.tweets} tweets</Text>
         </View>
 
         )
@@ -84,8 +86,21 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor:'black',
-        color:'white',
-        fontWeight:'bold'
+        color:'red',
+        fontWeight:'bold',
+        fontSize: 20
+    }
+})
+
+const result_styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        padding: 5,
+        alignItems: 'center',
+        backgroundColor: 'black',
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 15
     }
 })
 
