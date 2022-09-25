@@ -5,18 +5,18 @@ Upon user input of an existing Twitter handle, our app uses the Twitter API v2 a
 in order to return a list of metrics regarding the user (e.g. username, display name, number of tweets).
 
 # Screenshots
-<center><img src="./images/first_screen.png" /></center>  
+<center><img src="./LotusProjector/images/first_screen.png" /></center>  
 <center> </center>
 
 Above is a screenshot of the main page/screen of our app when it's first launched.
 
-<center><img src="./images/results_screen_abc.png" /></center>  
+<center><img src="./LotusProjector/images/results_screen_abc.png" /></center>  
 <center> </center>
 
 Above is a screenshot of the screen which refreshes to show the metrics of @abc when the username
 is entered into our app.
 
-<center><img src="./images/results_screen_elon.png" /></center>  
+<center><img src="./LotusProjector/images/results_screen_elon.png" /></center>  
 <center> </center>
 
 Above is a screenshot of the screen which refreshes to show the metrics of @abc when the username
