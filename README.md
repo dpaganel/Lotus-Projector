@@ -10,7 +10,7 @@ in order to return a list of metrics regarding the user (e.g. username, display 
 
 Above is a screenshot of the main page/screen of our app when it's first launched.
 
-<center><img src="./LotusProjector/images/results_screen_abc.png" /></center>  
+<center><img src="./LotusProjector/images/result_screen_abc.png" /></center>  
 <center> </center>
 
 Above is a screenshot of the screen which refreshes to show the metrics of @abc when the username
